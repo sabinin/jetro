@@ -9,6 +9,11 @@
   min-height: 78px;
   position: relative;
   margin-bottom: 0; }
+  .navbar .navbar-toggle {
+    margin-top: 30px; }
+    .navbar .navbar-toggle .icon-bar {
+      color: #f2ae9c;
+      background-color: #f2ae9c; }
   .navbar:before {
     content: "";
     position: absolute;
