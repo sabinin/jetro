@@ -4,11 +4,16 @@
   src: url("../fonts/bebas.ttf") format("truetype");
   font-style: normal;
   font-weight: normal; }
+.transparent {
+  color: #f2ae9c; }
+
 .navbar {
   border: none;
   min-height: 78px;
   position: relative;
   margin-bottom: 0; }
+  .navbar > .container {
+    max-width: 960px; }
   .navbar .navbar-toggle {
     margin-top: 30px; }
     .navbar .navbar-toggle .icon-bar {
@@ -23,20 +28,27 @@
     background: #f2ae9c;
     z-index: -10; }
   .navbar .navbar-brand {
-    padding: 0;
+    padding: 15px 0 0 20px;
     line-height: 78px;
     height: 78px;
-    color: #fff;
     text-transform: uppercase;
-    font: 36px "Bebas", Arial, Helvetica, sans-serif; }
-    .navbar .navbar-brand .jt-light {
-      color: #f2ae9c; }
+    font: 36px "Bebas", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #e8663c; }
     .navbar .navbar-brand img {
       margin-top: 20px;
       margin-left: 10px; }
+  .navbar .nav > li > a {
+    padding: 0 0px 0 28px;
+    margin: 5px 0 0 0;
+    transition: .5s ease; }
+    .navbar .nav > li > a:focus, .navbar .nav > li > a:active, .navbar .nav > li > a:hover {
+      background-color: transparent;
+      color: #e8663c; }
   .navbar .navbar-nav {
     font-size: 16px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    padding: 0; }
     .navbar .navbar-nav > li > a {
       color: #b9b9b9;
       font: 16px "Bebas", Arial, Helvetica, sans-serif;
@@ -55,9 +67,9 @@
   background-color: rgba(232, 102, 60, 0.8);
   left: 35px;
   bottom: 30px;
-  max-width: 430px;
+  max-width: 415px;
   text-align: left;
-  padding: 25px 0 25px 20px; }
+  padding: 15px 0 25px 20px; }
   .carousel-caption > p {
     padding: 0;
     margin: 0;
@@ -66,6 +78,24 @@
     padding: 0 0 20px 0;
     margin: 0;
     font: 18px "Bebas", Arial, Helvetica, sans-serif; }
+
+.glyphicon {
+  text-shadow: none;
+  font-size: 55px !important;
+  margin-top: -50px; }
+
+.carousel-control .icon-prev,
+.carousel-control .glyphicon-chevron-left {
+  left: 50%;
+  margin-left: -49px;
+  margin-top: -47px; }
+
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-right {
+  margin-top: -47px;
+  right: 50%;
+  margin-right: -29px;
+  padding-right: 10px; }
 
 img {
   width: 100%; }
@@ -93,26 +123,39 @@ img {
   top: 0;
   left: 0; }
 
+.thumbnails {
+  margin-top: 20px; }
+
 .container + .container {
   margin-top: 20px; }
 
 .features {
   margin-top: 40px;
   font: 12px Arial, Helvetica, sans-serif; }
+  .features .features-description {
+    max-width: 275px;
+    line-height: 1.5; }
   .features p {
     margin-bottom: 20px !important; }
   .features .heading {
     width: 100%;
-    margin-bottom: 40px; }
+    margin-bottom: 32px;
+    height: 46px;
+    line-height: 46px; }
     .features .heading > p {
-      float: left;
-      max-width: 240px;
+      max-width: 80%;
       color: #e8663c;
-      padding-left: 15px;
-      font: 18px "Bebas", Arial, Helvetica, sans-serif; }
+      padding-left: 20px;
+      font: 18px "Bebas", Arial, Helvetica, sans-serif;
+      display: inline-block;
+      margin-top: 0;
+      float: left; }
     .features .heading > img {
       width: 46px;
       height: 46px;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0;
       float: left; }
   .features a {
     background-color: #e8663c;
@@ -128,16 +171,18 @@ img {
     color: #e8663c; }
 
 .resent {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px; }
   .resent .title {
     position: relative;
     z-index: 1000;
     height: 25px;
-    margin-bottom: 30px; }
+    margin-bottom: 20px;
+    left: 12px; }
   .resent .title:before {
     content: "";
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEqRgDDwAAAABJRU5ErkJggg==) repeat;
+    max-width: 940px;
     width: 100%;
     height: 20px;
     opacity: .25;
@@ -154,10 +199,10 @@ img {
     height: 25px; }
   .resent h4 {
     font: 16px "Bebas", Arial, Helvetica, sans-serif;
+    font-weight: 500;
     color: #b9b9b9;
     text-transform: uppercase;
-    margin-left: 15px;
-    margin-top: 15px;
+    margin: 10px 0 0 15px;
     padding: 0; }
   .resent p {
     font: 11px "Bebas", Arial, Helvetica, sans-serif;
@@ -166,6 +211,9 @@ img {
     margin-left: 15px;
     margin-top: 0;
     padding: 0; }
+  .resent img {
+    margin-bottom: 0;
+    padding-bottom: 0; }
   .resent .post-desc {
     margin: 0;
     padding: 0;
@@ -182,14 +230,12 @@ img {
     font: 20px "Bebas", Arial, Helvetica, sans-serif;
     color: #fff;
     margin-left: 35px;
-    margin-top: 50px; }
+    margin-top: 35px; }
   .footer p {
     font: 12px  Arial, Helvetica, sans-serif;
     color: #fff;
     margin-left: 35px;
-    margin-top: 25px; }
-    .footer p .transparent {
-      color: #f2ae9c; }
+    margin-top: 20px; }
   .footer:before {
     content: " ";
     position: absolute;
@@ -212,8 +258,56 @@ img {
     transition: .2s ease; }
     .footer .social:hover {
       transform: translateY(-5px); }
+  .footer .twitter h5, .footer .twitter p {
+    margin-left: 40px;
+    padding-right: 35px;
+    line-height: 1.2; }
+    .footer .twitter h5 .ft-about-1, .footer .twitter p .ft-about-1 {
+      line-height: 3; }
+    .footer .twitter h5 .ft-about-2, .footer .twitter p .ft-about-2 {
+      line-height: 2; }
+  .footer .twitter .ft-mail-2 {
+    margin-top: 0; }
 
-@media (max-width: 767px) {
-  p,
-  img {
-    padding: 10px; } }
+img {
+  max-width: 100%; }
+
+@media (max-width: 761px) {
+  .navbar .navbar-nav > li > a {
+    line-height: 40px; }
+
+  .features {
+    margin-top: 20px;
+    font: 12px Arial, Helvetica, sans-serif; }
+    .features .features-description {
+      max-width: 100%; }
+
+  .heading {
+    margin-top: 30px; }
+    .heading > p {
+      max-width: 80%;
+      color: #e8663c;
+      padding-left: 20px;
+      font: 18px "Bebas", Arial, Helvetica, sans-serif;
+      display: inline-block;
+      margin-top: 20px;
+      float: left; }
+    .heading > img {
+      width: 46px;
+      height: 46px;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0;
+      float: left; }
+
+  .container {
+    padding-right: 10px;
+    padding-left: 10px; } }
+@media (max-width: 990px) {
+  .thumbnails img {
+    margin-bottom: 20px; } }
+@media (min-width: 999px) {
+  .contactus h5, .contactus p {
+    margin-left: 5px;
+    padding-right: 35px;
+    line-height: 1.2; } }

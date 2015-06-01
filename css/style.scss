@@ -9,11 +9,17 @@
 $primary-light: #f2ae9c;
 $primary:#fff;
 $orang:#e8663c;
+.transparent{
+  color:$primary-light;
+}
 .navbar{
   border: none;
   min-height: 78px;
   position: relative;
   margin-bottom: 0;
+  &>.container{
+    max-width: 960px;
+  }
   & .navbar-toggle {
     margin-top: 30px;
     & .icon-bar {
@@ -31,23 +37,34 @@ $orang:#e8663c;
     z-index: -10;
   }
   .navbar-brand{
-    padding: 0;
+    padding: 15px 0 0 20px;
     line-height: 78px;
     height: 78px;
-    color: $primary;
     text-transform: uppercase;
     font: 36px "Bebas", Arial, Helvetica, sans-serif;
-    .jt-light{
-      color: $primary-light;
-    }
+    font-weight: 700;
+    color: $orang;
+
     & img{
       margin-top: 20px;
       margin-left: 10px;
     }
   }
+  .nav>li>a{
+    padding: 0 0px 0 28px;
+    margin: 5px 0 0 0 ;
+    transition: .5s ease;
+    &:focus,
+    &:active,
+    &:hover{
+      background-color: transparent;
+      color: $orang;
+    }
+  }
   .navbar-nav{
     font-size: 16px;
     text-transform: uppercase;
+    padding: 0;
     &>li{
       &>a{
         color: #b9b9b9;
@@ -74,9 +91,9 @@ $orang:#e8663c;
   background-color: rgba(232, 102, 60, 0.80);
   left: 35px;
   bottom: 30px;
-  max-width: 430px;
+  max-width: 415px;
   text-align: left;
-  padding: 25px 0 25px 20px;
+  padding: 15px 0 25px 20px;
   &>p{
     padding: 0;
     margin: 0;
@@ -87,6 +104,24 @@ $orang:#e8663c;
     margin: 0;
     font: 18px "Bebas", Arial, Helvetica, sans-serif;
   }
+}
+.glyphicon {
+  text-shadow: none;
+  font-size: 55px!important;
+  margin-top: -50px;
+}
+.carousel-control .icon-prev,
+.carousel-control .glyphicon-chevron-left {
+  left: 50%;
+  margin-left: -49px;
+  margin-top: -47px;
+}
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-right {
+  margin-top: -47px;
+  right: 50%;
+  margin-right: -29px;
+  padding-right: 10px;
 }
 img{
   width: 100%;
@@ -114,28 +149,42 @@ img{
   top: 0;
   left: 0;
 }
+.thumbnails{
+  margin-top: 20px;
+}
 .container+.container{
   margin-top: 20px;
 }
 .features{
   margin-top: 40px;
   font: 12px Arial, Helvetica, sans-serif;
+  & .features-description{
+    max-width: 275px;
+    line-height: 1.5;
+  }
   & p{
     margin-bottom: 20px!important;
   }
   & .heading{
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
+    height: 46px;
+    line-height: 46px;
     &>p{
-      float: left;
-      max-width: 240px;
+      max-width: 80%;
       color: $orang;
-      padding-left: 15px;
+      padding-left: 20px;
       font: 18px "Bebas", Arial, Helvetica, sans-serif;
+      display: inline-block;
+      margin-top: 0;
+      float: left;
     }
     &>img{
       width: 46px;
       height: 46px;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0;
       float: left;
     }
   }
@@ -156,19 +205,21 @@ img{
 
 }
 .resent{
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
   & .title{
     position: relative;
     z-index: 1000;
     height: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    left: 12px;
   }
   & .title:before{
     content: "";
     background:url(
     data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAH0lEQVQIW2NkQAX/GZH4/xkYGBhhAmAOSBJEwDkgAQCCrgQEqRgDDwAAAABJRU5ErkJggg==
     ) repeat;
+    max-width: 940px;
     width: 100%;
     height: 20px;
     opacity: .25;
@@ -187,10 +238,10 @@ img{
   }
   & h4{
     font: 16px "Bebas", Arial, Helvetica, sans-serif;
+    font-weight: 500;
     color: #b9b9b9;
     text-transform: uppercase;
-    margin-left: 15px;
-    margin-top: 15px;
+    margin: 10px 0 0 15px;
     padding: 0;
   }
   & p{
@@ -200,6 +251,10 @@ img{
     margin-left: 15px;
     margin-top: 0;
     padding: 0;
+  }
+  & img{
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
   & .post-desc{
     margin: 0;
@@ -218,16 +273,14 @@ img{
     font: 20px "Bebas", Arial, Helvetica, sans-serif;
     color: #fff;
     margin-left: 35px;
-    margin-top: 50px;
+    margin-top: 35px;
   }
   & p{
     font: 12px  Arial, Helvetica, sans-serif;
     color: #fff;
     margin-left: 35px;
-    margin-top: 25px;
-    & .transparent{
-      color:$primary-light;
-    }
+    margin-top: 20px;
+
   }
   &:before {
     content: " ";
@@ -255,11 +308,80 @@ img{
       transform: translateY(-5px);
     }
   }
-}
+  & .twitter{
+    & h5,
+    & p{
+      margin-left: 40px;
+      padding-right: 35px;
+      line-height: 1.2;
+      & .ft-about-1{
+         line-height: 3;
+      }
+      & .ft-about-2{
+        line-height: 2;
+      }
+    }
+    & .ft-mail-2{
+      margin-top: 0;
+    }
 
-@media (max-width: 767px) {
-  p,
-  img{
-    padding: 10px;
+  }
+
+}
+img{
+  max-width: 100%;
+}
+@media  (max-width:761px ){
+  .navbar .navbar-nav > li > a {
+    line-height: 40px;
+  }
+  .features {
+    margin-top: 20px;
+    font: 12px Arial, Helvetica, sans-serif;
+    & .features-description {
+      max-width: 100%;
+    }
+  }
+.heading{
+  margin-top: 30px;
+  & >p{
+    max-width: 80%;
+    color: $orang;
+    padding-left: 20px;
+    font: 18px "Bebas", Arial, Helvetica, sans-serif;
+    display: inline-block;
+    margin-top: 20px;
+    float: left;
+  }
+  & >img{
+    width: 46px;
+    height: 46px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    float: left;
+  }
+}
+  .container {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+}
+@media (max-width: 990px) {
+  .thumbnails{
+    & img{
+      margin-bottom: 20px;
+    }
   }
   }
+@media (min-width: 999px) {
+
+  .contactus{
+    & h5,
+    & p{
+      margin-left: 5px;
+      padding-right: 35px;
+      line-height: 1.2;
+    }
+  }
+}
